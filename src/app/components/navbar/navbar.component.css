@@ -1,0 +1,12 @@
+.nav-item {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+.navbar-brand {
+  cursor: pointer;
+  color: white;
+}
+.navbar {
+  background-color: #2a2f4f;
+}

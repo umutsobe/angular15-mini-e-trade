@@ -1,0 +1,54 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  /* border: 0; */
+}
+.product-card {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+.product-card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.credi-info {
+  background-color: #ff6060;
+  color: white;
+  margin-left: 3px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.description {
+  font-size: 12px;
+  color: #7b7b6b;
+}
+.price {
+  font-size: 18px;
+}
+.cargo-info {
+  background-color: #146c94;
+  color: white;
+  margin-left: 3px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.cargo-date-info {
+  background-color: #5f264a;
+  color: white;
+  margin-left: 3px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+}
+.fa-star {
+  font-size: 11px;
+  color: #ffa41c;
+}
+.fa-star::before {
+  display: none;
+}
