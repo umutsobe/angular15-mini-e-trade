@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
 import { User } from './user-model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,13 +10,13 @@ import { User } from './user-model';
 export class AuthService {
   SignUpUrl: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
   SignInUrl: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
+  url: string = environment.firebase.databaseURL;
 
   apiKey: string = 'AIzaSyBVvQgxWhbHVJVc34Fjb8lHSc9mV7suJsQ';
   user = new BehaviorSubject<User | null>(null);
-
   constructor(private http: HttpClient) {}
 
-  register(email: string, password: string) {
+  register(email: string, password: string, username: string) {
     return this.http
       .post<AuthResponse>(this.SignUpUrl + this.apiKey, {
         email: email,
@@ -26,7 +27,7 @@ export class AuthService {
         tap((response) => {
           const expirationDate = new Date(new Date().getTime() + Number(response.expiresIn) * 1000);
 
-          const user = new User(response.email, response.localId, response.idToken, expirationDate);
+          const user = new User(response.email, response.localId, response.idToken, expirationDate, username);
           this.user.next(user);
           localStorage.setItem('user', JSON.stringify(user));
         })
