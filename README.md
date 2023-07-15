@@ -1,3 +1,7 @@
+## You can view the site here
+
+https://shoppappfirebase-cc9a2.web.app/
+
 # ShopApp2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
